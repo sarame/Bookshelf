@@ -16,7 +16,7 @@ class SearchBooks extends Component {
 
   render() {
     const {
-      searchBooks,
+      searchBooksData,
       myBooks,
       onResetSearch,
       onMove
@@ -41,7 +41,7 @@ class SearchBooks extends Component {
           </div>
         </div>
         <SearchResults
-          searchBooks={searchBooks}
+          searchBooksData={searchBooksData}
           myBooks={myBooks}
           onMove={onMove}
         />

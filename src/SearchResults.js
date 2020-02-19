@@ -2,9 +2,9 @@ import React from 'react';
 import OptionsMenu from './OptionsMenu';
 
 const SearchResults = props => {
-  const { searchBooks, myBooks, onMove } = props;
+  const { searchBooksData, myBooks, onMove } = props;
 
-  const updatedBooks = searchBooks.map(book => {
+  const updatedBooks = searchBooksData.map(book => {
     myBooks.map(b => {
       if (b.id === book.id) {
         book.shelf = b.shelf;

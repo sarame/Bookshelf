@@ -8,7 +8,8 @@ class OptionsMenu extends Component {
 
   static propTypes = {
     book: PropTypes.object.isRequired,
-    onMove: PropTypes.func.isRequired
+    onMove: PropTypes.func.isRequired,
+    shelf: PropTypes.string.isRequired
   }
 
   handleChange = event => {

@@ -27,7 +27,7 @@ class BookType extends Component {
                     <OptionsMenu
                       onMove={onMove}
                       book={book} 
-                      shelf={shelf} 
+                      shelf={shelf.key} 
                     />
                   </div>
                   <div className="book-title">{book.title}</div>

@@ -15,7 +15,7 @@ class BooksApp extends Component {
 
   state = {
     myBooks: [],
-    searchBooks: [],
+    searchBooksData: [],
     error: false
   };
 
@@ -48,26 +48,27 @@ class BooksApp extends Component {
   };
 
   searchForBooks = (query) => {
+    
     if (query.length > 0) {
       BooksAPI.search(query).then(books => {
         if (books.error) {
-          this.setState({ searchBooks: [] });
+          this.setState({ searchBooksData: [] });
         } else {
-          this.setState({ searchBooks: books });
+          this.setState({ searchBooksData: books });
         }
       });
     } else {
-      this.setState({ searchBooks: [] });
+      this.setState({ searchBooksData: [] });
     }
   }
 
   resetSearch = () => {
-    this.setState({ searchBooks: [] });
+    this.setState({ searchBooksData: [] });
   };
 
 
   render() {
-    const { myBooks, searchBooks, error } = this.state;
+    const { myBooks, searchBooksData, error } = this.state;
     if (error) {
       return <div>Network error. Please try again later.</div>;
     }
@@ -86,7 +87,7 @@ class BooksApp extends Component {
           path="/search"
           render={() => (
             <SearchBook
-              searchBooks={searchBooks}
+            searchBooksData={searchBooksData}
               myBooks={myBooks}
               onSearch={this.searchForBooks}
               onMove={this.moveBook}
