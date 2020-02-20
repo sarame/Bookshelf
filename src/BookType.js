@@ -23,11 +23,17 @@ class BookType extends Component {
               <li key={book.id} >
                 <div className="book">
                   <div className="book-top">
-                    <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
+                    <div className="book-cover" style={{
+                      width: 128, height: 193, backgroundImage: `url(${
+                        book.imageLinks
+                          ? book.imageLinks.thumbnail
+                          : 'icons/book-placeholder.svg'
+                        }) `
+                    }}></div>
                     <OptionsMenu
                       onMove={onMove}
-                      book={book} 
-                      shelf={shelf.key} 
+                      book={book}
+                      shelf={shelf.key}
                     />
                   </div>
                   <div className="book-title">{book.title}</div>
